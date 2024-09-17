@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbcu13jvh7lmk"]
+
+[ext_resource type="Texture2D" uid="uid://cojjnxqlmw3hv" path="res://assets/fill_pix.png" id="1_c4yxd"]
+[ext_resource type="Script" path="res://scripts/cell.gd" id="2_0168o"]
+
+[node name="Cell" type="TextureButton"]
+custom_minimum_size = Vector2(5, 5)
+offset_right = 6.0
+offset_bottom = 6.0
+mouse_filter = 1
+toggle_mode = true
+texture_hover = ExtResource("1_c4yxd")
+stretch_mode = 3
+script = ExtResource("2_0168o")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

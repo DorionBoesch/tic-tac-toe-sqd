@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://bialh88jv338f"]
+
+[ext_resource type="Script" path="res://scripts/mini_board.gd" id="1_k6276"]
+[ext_resource type="Texture2D" uid="uid://brbau2m4n2dj5" path="res://assets/mini_board.png" id="1_mj18w"]
+[ext_resource type="PackedScene" uid="uid://dbcu13jvh7lmk" path="res://scenes/cell.tscn" id="2_w1mmp"]
+[ext_resource type="Texture2D" uid="uid://cobptknhe4ad1" path="res://assets/big_x.png" id="4_hyhvw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3usb"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btffa"]
+bg_color = Color(0, 0, 0, 0.678431)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yxl1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.493985, 0.598072, 0.735851, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7e630"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="MiniBoard" type="Panel"]
+offset_right = 23.0
+offset_bottom = 23.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3usb")
+script = ExtResource("1_k6276")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mj18w")
+centered = false
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+offset_right = 23.0
+offset_bottom = 23.0
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(10, 10)
+columns = 3
+
+[node name="Cell1" parent="GridContainer" instance=ExtResource("2_w1mmp")]
+layout_mode = 2
+
+[node name="Cell2" parent="GridContainer" instance=ExtResource("2_w1mmp")]
+layout_mode = 2
+
+[node name="Cell3" parent="GridContainer" instance=ExtResource("2_w1mmp")]
+layout_mode = 2
+
+[node name="Cell4" parent="GridContainer" instance=ExtResource("2_w1mmp")]
+layout_mode = 2
+
+[node name="Cell5" parent="GridContainer" instance=ExtResource("2_w1mmp")]
+layout_mode = 2
+
+[node name="Cell6" parent="GridContainer" instance=ExtResource("2_w1mmp")]
+layout_mode = 2
+
+[node name="Cell7" parent="GridContainer" instance=ExtResource("2_w1mmp")]
+layout_mode = 2
+
+[node name="Cell8" parent="GridContainer" instance=ExtResource("2_w1mmp")]
+layout_mode = 2
+
+[node name="Cell9" parent="GridContainer" instance=ExtResource("2_w1mmp")]
+layout_mode = 2
+
+[node name="ClosedPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 23.0
+offset_bottom = 23.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_btffa")
+
+[node name="Sprite2D" type="Sprite2D" parent="ClosedPanel"]
+position = Vector2(11.5, 11.5)
+scale = Vector2(0.92, 0.92)
+texture = ExtResource("4_hyhvw")
+
+[node name="FocusPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 24.0
+offset_bottom = 24.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3yxl1")
+
+[node name="LockedPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 23.0
+offset_bottom = 23.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7e630")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

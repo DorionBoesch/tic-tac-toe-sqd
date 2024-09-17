@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://2ysgrvilnd5t"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_c1gsj"]
+[ext_resource type="Texture2D" uid="uid://n6pygfg28rfr" path="res://assets/main_board.png" id="1_uwic4"]
+[ext_resource type="PackedScene" uid="uid://bialh88jv338f" path="res://scenes/mini_board.tscn" id="2_iprk8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdd36"]
+texture = ExtResource("1_uwic4")
+
+[node name="Main" type="Node"]
+script = ExtResource("1_c1gsj")
+
+[node name="MainBoard" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.5
+offset_top = -255.5
+offset_right = -182.5
+offset_bottom = -182.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7, 7)
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdd36")
+
+[node name="GridContainer" type="GridContainer" parent="MainBoard"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -36.5
+offset_right = 36.5
+offset_bottom = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 3
+
+[node name="MiniBoard" parent="MainBoard/GridContainer" instance=ExtResource("2_iprk8")]
+layout_mode = 2
+
+[node name="MiniBoard2" parent="MainBoard/GridContainer" instance=ExtResource("2_iprk8")]
+layout_mode = 2
+
+[node name="MiniBoard3" parent="MainBoard/GridContainer" instance=ExtResource("2_iprk8")]
+layout_mode = 2
+
+[node name="MiniBoard4" parent="MainBoard/GridContainer" instance=ExtResource("2_iprk8")]
+layout_mode = 2
+
+[node name="MiniBoard5" parent="MainBoard/GridContainer" instance=ExtResource("2_iprk8")]
+layout_mode = 2
+
+[node name="MiniBoard6" parent="MainBoard/GridContainer" instance=ExtResource("2_iprk8")]
+layout_mode = 2
+
+[node name="MiniBoard7" parent="MainBoard/GridContainer" instance=ExtResource("2_iprk8")]
+layout_mode = 2
+
+[node name="MiniBoard8" parent="MainBoard/GridContainer" instance=ExtResource("2_iprk8")]
+layout_mode = 2
+
+[node name="MiniBoard9" parent="MainBoard/GridContainer" instance=ExtResource("2_iprk8")]
+layout_mode = 2
